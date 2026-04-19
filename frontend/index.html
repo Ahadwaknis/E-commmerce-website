@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#8b5cf6" />
+    <meta name="description" content="Premium e-commerce platform with AI recommendations, smart search, and modern design" />
+    <meta name="keywords" content="ecommerce, shopping, online store, AI recommendations" />
+    <meta name="author" content="E-Shop Team" />
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://eshop-demo.com/" />
+    <meta property="og:title" content="E-Shop - Premium E-commerce Platform" />
+    <meta property="og:description" content="Your premium online shopping destination with AI recommendations and smart features" />
+    <meta property="og:image" content="https://via.placeholder.com/1200x630/8b5cf6/ffffff?text=E-Shop" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://eshop-demo.com/" />
+    <meta property="twitter:title" content="E-Shop - Premium E-commerce Platform" />
+    <meta property="twitter:description" content="Your premium online shopping destination with AI recommendations and smart features" />
+    <meta property="twitter:image" content="https://via.placeholder.com/1200x630/8b5cf6/ffffff?text=E-Shop" />
+
+    <title>E-Shop - Premium E-commerce Platform</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('SW registered: ', registration);
+            })
+            .catch((registrationError) => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>
